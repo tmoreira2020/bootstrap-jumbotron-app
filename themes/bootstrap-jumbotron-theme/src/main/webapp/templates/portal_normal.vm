@@ -1,0 +1,112 @@
+#*
+ * Copyright (C) 2014 Thiago Moreira (tmoreira2020@gmail.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *#
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <title>$the_title - $site_name</title>
+    #if ($layout.isIconImage())
+        <meta property="og:image" content="$theme_display.getPortalURL()$theme_display.getPathImage()/layout_icon?img_id=$layout.getIconImageId()" />
+    #end
+    <meta property="og:locale" content="$locale" />
+    <meta property="og:title" content="$the_title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="$site_name" />
+    <meta property="og:url" content="$portal.getCurrentCompleteURL($request)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="https://www.thiagomoreira.com.br" />
+
+    <meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+    $theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+    $theme.include($body_top_include)
+
+    #dockbar()
+
+    #set($containerMaxWidth = $theme_settings.getProperty('container-max-width'))
+
+    #if($validator.isNotNull($containerMaxWidth))
+        <div class="container-fluid" id="wrapper" style="max-width: $theme_settings.getProperty('container-max-width')px;">
+    #else
+        <div class="container-fluid" id="wrapper">
+    #end
+
+
+        <header id="banner" role="banner">
+        #if ($use_company_logo)
+            <div class="jumbotron">
+                <h1>$site_name</h1>
+                <p>$page_group.getDescription()</p>
+            </div>
+        #else
+            <a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
+                <hgroup style="background-image: url('$site_logo');">
+                    <h1>$site_name</h1>
+                    <h2>$page_group.getDescription()</h2>
+                </hgroup>
+            </a>
+        #end
+
+            #parse ("$full_templates_path/navigation.vm")
+        </header>
+
+        <div id="content">
+            #if ($selectable)
+                $theme.include($content_include)
+            #else
+                $portletDisplay.recycle()
+
+                $portletDisplay.setTitle($the_title)
+
+                $theme.wrapPortlet("portlet.vm", $content_include)
+            #end
+        </div>
+
+        <footer id="footer" class="well">
+            #set($footerPhone = $theme_settings.getProperty("footer-phone"))
+            #set($footerEmail = $theme_settings.getProperty("footer-email"))
+            #set($footerSkype = $theme_settings.getProperty("footer-skype"))
+            #set($footerPhoneSet = $validator.isNotNull($footerPhone))
+            #set($footerEmailSet = $validator.isNotNull($footerEmail))
+            #set($footerSkypeSet = $validator.isNotNull($footerSkype))
+
+            #if($footerPhoneSet)
+                <div>$footerPhone#if($footerEmailSet||$footerSkypeSet)<span class="hidden-phone hidden-tablet">&nbsp;|&nbsp;</span>#end</div>
+            #end
+            #if($footerEmailSet)
+                <div><a href="mailto:$footerEmail">$footerEmail</a>#if($footerSkypeSet)<span class="hidden-phone hidden-tablet">&nbsp;|&nbsp;</span>#end</div>
+            #end
+            #if($footerSkypeSet)
+                <div> <a href="skype:$footerSkype?call">skype</a></div>
+            #end
+            <div class="copyright pull-right">&copy; $site_name $the_year</div>
+        </footer>
+    </div>
+
+    $theme.include($body_bottom_include)
+
+    $theme.include($bottom_include)
+
+</body>
+
+</html>

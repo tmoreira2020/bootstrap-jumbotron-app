@@ -1,0 +1,171 @@
+/**
+ * Copyright (C) 2014 Thiago Moreira (tmoreira2020@gmail.com)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@import "compass";
+@import "mixins";
+
+.aui {
+	.container-fluid {
+		margin: 0 auto;
+	}
+
+	.dropdown-menu {
+		margin: 0;
+	}
+
+	.user-avatar-image {
+		width: 20px;
+		@include border-radius(50%);
+		@include box-shadow(0 0 0 2px #5594E0);
+	}
+
+	#wrapper {
+		padding-bottom: 0;
+		padding-top: 1em;
+		position: relative;
+
+		@include respond-to(desktop) {
+			padding-left: 5em;
+			padding-right: 5em;
+		}
+	}
+
+	@include respond-to(phone, tablet) {
+		.aui {
+			#navigation {
+				display: none;
+
+				&.open {
+					display: block;
+
+					.navbar-inner {
+						@include border-radius(3px);
+						padding: 10px;
+
+						.nav-collapse {
+							height: auto;
+							overflow: visible;
+						}
+					}
+				}
+
+				.nav {
+					margin: 0;
+				}
+			}
+
+			.signed-out #_145_navAddControlsNavbarBtn {
+				display: none;
+			}
+		}
+	}
+
+	/* Jumbotron */
+
+	.custom-logo {
+		padding-bottom: 19%;
+		position: relative;
+		height: 0;
+		width: 100%;
+	}
+
+	.custom-logo h1, .custom-logo h2 {
+		font-size: 0;
+		text-rendering: auto;
+	}
+
+	.custom-logo hgroup {
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		border-radius: 6%;
+		height: 100%;
+		margin-top: -0.500em;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	.jumbotron {
+		padding: 30px;
+		margin-bottom: 30px;
+		font-size: 21px;
+		font-weight: 200;
+		line-height: 2.1428571435;
+		color: inherit;
+		background-color: #eeeeee;
+	}
+
+	.jumbotron h1 {
+		line-height: 1;
+		color: inherit;
+	}
+
+	.jumbotron p {
+		line-height: 1.4;
+	}
+
+	.container-fluid .jumbotron {
+		border-radius: 6px;
+	}
+
+	.jumbotron .container {
+		max-width: 100%;
+	}
+
+	@include respond-to(desktop) {
+		.jumbotron {
+			padding-top: 48px;
+			padding-bottom: 48px;
+		}
+
+		.container-fluid .jumbotron {
+			padding-left: 60px;
+			padding-right: 60px;
+		}
+
+		.jumbotron h1 {
+			font-size: 63px;
+		}
+	}
+
+	/* Footer */
+
+	footer {
+		div {
+			float: left
+		}
+	}
+
+	@include respond-to(phone, tablet) {
+		.copyright {
+			float: none !important;
+		}
+
+		footer {
+			min-height: 100px !important;
+			padding-top: 5px;
+			text-align: center;
+		}
+
+		footer {
+			div {
+				float: none;
+				margin: 5px;
+			}
+		}
+	}
+}
