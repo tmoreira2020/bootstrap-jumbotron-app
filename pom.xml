@@ -27,7 +27,7 @@
 
 	<groupId>br.com.thiagomoreira.liferay.plugins.bootstrap-jumbotron-app</groupId>
 	<artifactId>bootstrap-jumbotron-app-parent</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Bootstrap Jumbotron App Parent</name>
@@ -44,7 +44,7 @@
 		<connection>scm:git:git@github.com:tmoreira2020/bootstrap-jumbotron-app.git</connection>
 		<developerConnection>scm:git:git@github.com:tmoreira2020/bootstrap-jumbotron-app.git</developerConnection>
 		<url>https://github.com/tmoreira2020/bootstrap-jumbotron-app</url>
-		<tag>bootstrap-jumbotron-app-parent-1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<properties>
