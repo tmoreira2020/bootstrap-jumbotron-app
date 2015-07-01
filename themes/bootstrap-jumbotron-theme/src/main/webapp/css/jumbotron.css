@@ -63,6 +63,20 @@
 			.nav {
 				margin: 0;
 			}
+
+			.navbar-inner {
+				.nav {
+					> li > a {
+						&.dropdown-toggle {
+							padding-right: 0;
+
+							.lfr-nav-child-toggle {
+								padding: 6px 12px 6px 8px;
+							}
+						}
+					}
+				}
+			}
 		}
 
 		.signed-out #_145_navAddControlsNavbarBtn {
