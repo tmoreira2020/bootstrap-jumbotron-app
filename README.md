@@ -19,7 +19,7 @@ Maven:
 <dependency>
     <groupId>br.com.thiagomoreira.liferay.plugins.bootstrap-jumbotron-app</groupId>
     <artifactId>bootstrap-jumbotron-app</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <type>lpkg</type>
 </dependency>
 ```
@@ -27,7 +27,7 @@ Gradle:
 
 ```groovy
 dependencies {
-    compile(group: "br.com.thiagomoreira.liferay.plugins.bootstrap-jumbotron-app", name: "bootstrap-jumbotron-portlet", version: "1.0.0", type: "lpkg");
+    compile(group: "br.com.thiagomoreira.liferay.plugins.bootstrap-jumbotron-app", name: "bootstrap-jumbotron-portlet", version: "1.0.1", type: "lpkg");
 }
 ```
 ### Support
