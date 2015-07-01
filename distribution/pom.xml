@@ -22,7 +22,7 @@
 	<parent>
 		<groupId>br.com.thiagomoreira.liferay.plugins.bootstrap-jumbotron-app</groupId>
 		<artifactId>bootstrap-jumbotron-app-parent</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</parent>
 
 	<artifactId>bootstrap-jumbotron-app</artifactId>
