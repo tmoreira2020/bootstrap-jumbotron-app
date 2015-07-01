@@ -1,0 +1,5 @@
+#if ($layout.isIconImage())
+    #set ($page_icon = "$theme_display.getPortalURL()$theme_display.getPathImage()/layout_icon?img_id=$layout.getIconImageId()")
+#else
+    #set ($page_icon = "$theme_display.getPortalURL()$site_logo")
+#end
