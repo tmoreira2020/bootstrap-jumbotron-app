@@ -46,6 +46,10 @@
 		<url>https://github.com/tmoreira2020/bootstrap-jumbotron-app</url>
 		<tag>HEAD</tag>
 	</scm>
+	<issueManagement>
+		<system>Github</system>
+		<url>https://github.com/tmoreira2020/bootstrap-jumbotron-app/issues</url>
+	</issueManagement>
 
 	<properties>
 		<liferay.home>${user.home}/projects/thiagomoreira/liferay-portal-6.2-ce-ga1</liferay.home>
