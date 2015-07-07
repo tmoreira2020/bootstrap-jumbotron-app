@@ -50,6 +50,10 @@
 		<system>Github</system>
 		<url>https://github.com/tmoreira2020/bootstrap-jumbotron-app/issues</url>
 	</issueManagement>
+	<ciManagement>
+		<system>Travis</system>
+		<url>https://travis-ci.org/tmoreira2020/bootstrap-jumbotron-app</url>
+	</ciManagement>
 
 	<properties>
 		<liferay.home>${user.home}/projects/thiagomoreira/liferay-portal-6.2-ce-ga1</liferay.home>
